@@ -5,6 +5,7 @@ export class TwirpError extends Error {
   public readonly msg: string;
   public readonly code: TwirpErrorCode = TwirpErrorCode.Internal;
   public readonly meta: Record<string, string> = {};
+  public readonly name = "TwirpError";
 
   private _originalCause?: Error;
 
