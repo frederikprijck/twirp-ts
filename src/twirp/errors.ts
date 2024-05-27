@@ -5,12 +5,12 @@ export class TwirpError extends Error {
   public readonly msg: string;
   public readonly code: TwirpErrorCode = TwirpErrorCode.Internal;
   public readonly meta: Record<string, string> = {};
-  public readonly name = "TwirpError";
 
   private _originalCause?: Error;
 
   constructor(code: TwirpErrorCode, msg: string) {
     super(msg);
+    this.name = "TwirpError";
     this.code = code;
     this.msg = msg;
     Object.setPrototypeOf(this, TwirpError.prototype);
